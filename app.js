@@ -40,14 +40,11 @@ function getInputNumber(id){
 const withdraw = document.getElementById("withdraw-btn");
 
 withdraw.addEventListener("click", function(){
+   
     const withdrawAmount = getInputNumber("withdrawAmount");
-    console.log(withdrawAmount);
-    UpdateWithdraw("currentWithdraw", withdrawAmount);
+    UpdateSpanText("currentWithdraw", withdrawAmount);
+    UpdateSpanText("currentBalance", -1* withdrawAmount);
+   
 })
 
-function UpdateWithdraw(id, debitedNumber){
-    const currentWith = document.getElementById(id).innerText;
-    const currentWithNumber = parseFloat(currentWith);
-    const totalWithdraw = debitedNumber + currentWithNumber;
-    document.getElementById(id).innerText = totalWithdraw;
-}
+
